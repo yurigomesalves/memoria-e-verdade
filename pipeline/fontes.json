@@ -1,0 +1,50 @@
+{
+  "cnv-vol1": {
+    "url_oficial": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_1_digital.pdf",
+    "url_download": "https://web.archive.org/web/20240123001525/http://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_1_digital.pdf",
+    "data_captura_wayback": "23/01/2024",
+    "descricao_curta": "Relatório Final da CNV, volume I, dez/2014, PDF com camada de texto.",
+    "fonte": {
+      "titulo": "Relatório Final da Comissão Nacional da Verdade — Volume I",
+      "autor_orgao": "Comissão Nacional da Verdade (CNV)",
+      "tipo_fonte": "relatorio_oficial",
+      "confiabilidade": "alta",
+      "data_documento": "2014-12-10",
+      "periodo": "pos_1985",
+      "url_origem": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_1_digital.pdf",
+      "licenca": "documento público oficial"
+    }
+  },
+  "cnv-vol2": {
+    "url_oficial": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_2_digital.pdf",
+    "url_download": "http://web.archive.org/web/20260209102310/https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_2_digital.pdf",
+    "data_captura_wayback": "09/02/2026",
+    "descricao_curta": "Relatório Final da CNV, volume II (textos temáticos), dez/2014, PDF com camada de texto.",
+    "fonte": {
+      "titulo": "Relatório Final da Comissão Nacional da Verdade — Volume II (textos temáticos)",
+      "autor_orgao": "Conselheiros da Comissão Nacional da Verdade (textos de autoria individual, não posição colegiada da CNV)",
+      "tipo_fonte": "relatorio_oficial",
+      "confiabilidade": "alta",
+      "data_documento": "2014-12-10",
+      "periodo": "pos_1985",
+      "url_origem": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_2_digital.pdf",
+      "licenca": "documento público oficial"
+    }
+  },
+  "cnv-vol3": {
+    "url_oficial": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_3_digital.pdf",
+    "url_download": "http://web.archive.org/web/20250825070448/https://cnv.memoriasreveladas.gov.br./images/pdf/relatorio/volume_3_digital.pdf",
+    "data_captura_wayback": "25/08/2025",
+    "descricao_curta": "Relatório Final da CNV, volume III (mortos e desaparecidos políticos — perfis das vítimas), dez/2014, PDF com camada de texto.",
+    "fonte": {
+      "titulo": "Relatório Final da Comissão Nacional da Verdade — Volume III (mortos e desaparecidos políticos)",
+      "autor_orgao": "Comissão Nacional da Verdade (CNV)",
+      "tipo_fonte": "relatorio_oficial",
+      "confiabilidade": "alta",
+      "data_documento": "2014-12-10",
+      "periodo": "pos_1985",
+      "url_origem": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_3_digital.pdf",
+      "licenca": "documento público oficial"
+    }
+  }
+}

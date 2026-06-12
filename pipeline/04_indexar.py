@@ -1,12 +1,16 @@
 """Indexação: gera embeddings dos chunks e grava fonte + chunks no Supabase.
 
+Lê os metadados da fonte do catálogo pipeline/fontes.json e a proveniência
+do pipeline/manifesto.json.
+
 Idempotente: se a fonte (mesma url_origem) já existir, os chunks dela são
 apagados e regravados — o registro da fonte é reaproveitado.
 
 Uso:
-    .venv/bin/python 04_indexar.py
+    .venv/bin/python 04_indexar.py cnv-vol2
 """
 
+import argparse
 import json
 from pathlib import Path
 
@@ -17,29 +21,24 @@ from sentence_transformers import SentenceTransformer
 from supabase import create_client
 
 RAIZ = Path(__file__).resolve().parent
-ARQ_CHUNKS = RAIZ / "dados" / "chunks" / "cnv-vol1.jsonl"
+CATALOGO = RAIZ / "fontes.json"
 ARQ_MANIFESTO = RAIZ / "manifesto.json"
 
 MODELO = "intfloat/multilingual-e5-small"
 LOTE_EMBEDDINGS = 64
 LOTE_INSERCAO = 100
 
-FONTE = {
-    "titulo": "Relatório Final da Comissão Nacional da Verdade — Volume I",
-    "autor_orgao": "Comissão Nacional da Verdade (CNV)",
-    "tipo_fonte": "relatorio_oficial",
-    "confiabilidade": "alta",
-    "data_documento": "2014-12-10",
-    "periodo": "pos_1985",
-    "url_origem": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_1_digital.pdf",
-    "licenca": "documento público oficial",
-}
 
-
-def montar_proveniencia() -> str:
+def montar_proveniencia(url_oficial: str) -> str:
     """Compõe o texto de proveniência a partir do manifesto do pipeline."""
     manifesto = json.loads(ARQ_MANIFESTO.read_text(encoding="utf-8"))
-    doc = manifesto[0]
+    candidatos = [d for d in manifesto if d.get("url_original") == url_oficial]
+    if not candidatos:
+        raise SystemExit(
+            f"Fonte com url_original={url_oficial} não encontrada no manifesto. "
+            "Rode antes o 01_baixar.py."
+        )
+    doc = candidatos[0]
     return (
         f"{doc['descricao']} Download em {doc['data_download'][:10]}, "
         f"sha256 {doc['sha256']}."
@@ -47,23 +46,35 @@ def montar_proveniencia() -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Indexa os chunks de uma fonte no Supabase")
+    parser.add_argument("slug", help="slug da fonte em fontes.json (ex.: cnv-vol2)")
+    args = parser.parse_args()
+
+    catalogo = json.loads(CATALOGO.read_text(encoding="utf-8"))
+    if args.slug not in catalogo:
+        raise SystemExit(f"fonte '{args.slug}' não está em {CATALOGO.name}. "
+                         f"Disponíveis: {', '.join(catalogo)}")
+    fonte_meta = catalogo[args.slug]["fonte"]
+    arq_chunks = RAIZ / "dados" / "chunks" / f"{args.slug}.jsonl"
+
     load_dotenv(RAIZ.parent / ".env.local")
     url = os.environ["SUPABASE_URL"]
     chave = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
     supabase = create_client(url, chave)
 
-    chunks = [
-        json.loads(linha)
-        for linha in ARQ_CHUNKS.read_text(encoding="utf-8").splitlines()
-        if linha.strip()
-    ]
-    print(f"{len(chunks)} chunks lidos de {ARQ_CHUNKS.name}")
+    # Atenção: não usar str.splitlines() aqui — o texto extraído dos PDFs pode
+    # conter separadores de linha Unicode (U+2028, U+0085) dentro dos chunks,
+    # que o splitlines() trataria como fim de registro, corrompendo a leitura.
+    # A iteração sobre o arquivo quebra apenas em quebras de linha reais (\n).
+    with open(arq_chunks, encoding="utf-8") as f:
+        chunks = [json.loads(linha) for linha in f if linha.strip()]
+    print(f"{len(chunks)} chunks lidos de {arq_chunks.name}")
 
     # Fonte: reaproveita se já existir (mesma url_origem), senão insere.
     existente = (
         supabase.table("fontes")
         .select("fonte_id")
-        .eq("url_origem", FONTE["url_origem"])
+        .eq("url_origem", fonte_meta["url_origem"])
         .execute()
     )
     if existente.data:
@@ -71,7 +82,7 @@ def main() -> None:
         apagados = supabase.table("chunks").delete().eq("fonte_id", fonte_id).execute()
         print(f"Fonte já existia ({fonte_id}); {len(apagados.data)} chunks antigos removidos.")
     else:
-        registro = dict(FONTE, proveniencia=montar_proveniencia())
+        registro = dict(fonte_meta, proveniencia=montar_proveniencia(fonte_meta["url_origem"]))
         resposta = supabase.table("fontes").insert(registro).execute()
         fonte_id = resposta.data[0]["fonte_id"]
         print(f"Fonte registrada: {fonte_id}")

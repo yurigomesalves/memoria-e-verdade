@@ -179,3 +179,41 @@ obsoleta `embed-consulta` no painel do Supabase.
 
 **Próximos passos (Fase 5 — Acervo completo):** ingestão das demais fontes
 prioritárias (engenheiro → cientista → curador).
+
+## 2026-06-12 — Fase 5: Acervo completo (CNV vols. II e III)
+
+**Escopo decidido pelo Yuri:** completar o Relatório Final da CNV (vols. II
+e III), deixando CEMDP, comissões estaduais e demais fontes para depois.
+
+**O que foi feito:**
+- Pipeline generalizado para múltiplas fontes: novo catálogo
+  `pipeline/fontes.json` (URLs, proveniência e metadados por slug); scripts
+  01–04 agora recebem o slug como argumento. Regressão do vol. I verificada
+  (chunks byte a byte idênticos, sha256 igual).
+- Vols. II (416 págs.) e III (1.996 págs.) baixados via Wayback Machine
+  (portal oficial bloqueia robôs), com hash e proveniência no manifesto.
+- Chunking por volume (cientista-de-dados): vol. II com seções dos 9 textos
+  temáticos; vol. III com seção "Perfil – Nome" para cada um dos 434 perfis
+  de mortos e desaparecidos, mapeados pelo índice cronológico — base da
+  Fase 6 (biografias e mapa).
+- Auditoria curatorial (curador-historiador, `docs/auditorias/
+  fase5-cnv-vols-2-3.md`): REPROVOU a 1ª versão do vol. III por erro
+  bloqueante de atribuição de nome (errata de paginação corrigida para a
+  página errada). Correção: verificação automática dos 434 perfis
+  (433 confirmados; 1 variante ortográfica decidida pelo curador —
+  "Goldenberg", grafia do corpo do relatório). Reauditoria: APROVADO.
+- Ressalva editorial do vol. II aplicada: `autor_orgao` registra que os
+  textos temáticos são de autoria individual de conselheiros, não posição
+  colegiada da CNV (refletirá nas citações).
+- Correção técnica no 04_indexar.py: leitura do JSONL quebrava em
+  separadores Unicode (U+2028) presentes no texto do vol. III.
+- Indexação no Supabase (autorizada pelo Yuri): vol. II = 997 chunks,
+  vol. III = 4.232 chunks (acervo total: 3 fontes, 7.261 chunks). Busca
+  validada nos três volumes, incluindo o perfil que motivou a reprovação.
+
+**Pendências:** decidir na Fase 6 se a grafia de outros nomes segue índice ou
+corpo em casos novos; demais fontes prioritárias (CEMDP, estaduais, BNM…)
+ficam para uma futura rodada de ingestão com este mesmo pipeline.
+
+**Próximos passos (Fase 6 — Biografias e mapa):** curador (conteúdo) →
+backend → frontend, partindo das seções "Perfil – Nome" do vol. III.

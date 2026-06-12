@@ -7,5 +7,25 @@
     "sha256": "c56a73de968759fd1d65de4ad2b78a5d41b2664935c62a494ef6193b8a1e8936",
     "tamanho_bytes": 9530795,
     "descricao": "Relatório Final da CNV, volume I, dez/2014, PDF com camada de texto. Documento original do portal Memórias Reveladas/Arquivo Nacional (https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_1_digital.pdf), obtido via cópia arquivada pelo Internet Archive (Wayback Machine) em 23/01/2024, pois o portal oficial bloqueia downloads automatizados (proteção anti-robô)."
+  },
+  {
+    "slug": "cnv-vol2",
+    "url": "http://web.archive.org/web/20260209102310/https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_2_digital.pdf",
+    "url_original": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_2_digital.pdf",
+    "arquivo_local": "dados/brutos/cnv-vol2.pdf",
+    "data_download": "2026-06-12T03:22:22.581911+00:00",
+    "sha256": "3d0527a370340004a0d2be1ccf3d5acd4a10de7f41566c224d4c2ae61fbd141d",
+    "tamanho_bytes": 3507632,
+    "descricao": "Relatório Final da CNV, volume II (textos temáticos), dez/2014, PDF com camada de texto. Documento original do portal Memórias Reveladas/Arquivo Nacional (https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_2_digital.pdf), obtido via cópia arquivada pelo Internet Archive (Wayback Machine) em 09/02/2026, pois o portal oficial bloqueia downloads automatizados (proteção anti-robô)."
+  },
+  {
+    "slug": "cnv-vol3",
+    "url": "http://web.archive.org/web/20250825070448/https://cnv.memoriasreveladas.gov.br./images/pdf/relatorio/volume_3_digital.pdf",
+    "url_original": "https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_3_digital.pdf",
+    "arquivo_local": "dados/brutos/cnv-vol3.pdf",
+    "data_download": "2026-06-12T03:22:40.504771+00:00",
+    "sha256": "acf3d684035885b6fd3bab5d87500bbb647879a4a243ef8adc66a2a1a6c52379",
+    "tamanho_bytes": 17059083,
+    "descricao": "Relatório Final da CNV, volume III (mortos e desaparecidos políticos — perfis das vítimas), dez/2014, PDF com camada de texto. Documento original do portal Memórias Reveladas/Arquivo Nacional (https://cnv.memoriasreveladas.gov.br/images/pdf/relatorio/volume_3_digital.pdf), obtido via cópia arquivada pelo Internet Archive (Wayback Machine) em 25/08/2025, pois o portal oficial bloqueia downloads automatizados (proteção anti-robô)."
   }
 ]
