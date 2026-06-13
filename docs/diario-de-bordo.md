@@ -313,3 +313,24 @@ se necessário).
   Relatório da CNV (estava desatualizado desde a Fase 5).
 - Rodapé da home ganhou link discreto para /curadoria (acesso restrito).
 - Validação: lint zerado, 69 testes passando, build de produção ok.
+
+## 13/06/2026 — Curadoria: Edson Luís de Lima Souto publicado
+- Curador-historiador pesquisou as duas pendências do lote inicial de
+  curadoria. "Edson Luís / Calabouço" era um falso positivo (as 2 ocorrências
+  do vol. I eram de outra pessoa, Edson Luís de Almeida Teles). A pessoa
+  correta, Edson Luís de Lima Souto, tem biografia completa no vol. III, pp.
+  224-228: criado `pipeline/dados/curadoria/biografias/edson-luis-de-lima-souto.json`
+  (8 citações verificadas, marcadores `classe_trabalhadora` e `estudante`).
+- Guerrilha do Araguaia (evento dedicado, polígono): segue sem especificidade
+  geográfica/operacional suficiente — não criado, nenhuma coordenada inventada.
+- ADR-010: marcador `estudante` exigiu ampliar o vocabulário de
+  `biografia_marcadores`/`evento_marcadores` (migração 0008, aplicada ao
+  Supabase) para os termos de "papel social" da seção 6.2 da taxonomia.
+  Aproveitada a rodada para corrigir 3 marcadores antigos do lote inicial que
+  estavam fora de qualquer vocabulário e bloqueavam `06_semear_curadoria.py`.
+- Seed rodado com sucesso (15 biografias, 11 eventos). Edson Luís revisado e
+  aprovado pelo Yuri — status alterado para "publicada" no arquivo e no banco.
+
+**Pendências:** Guerrilha do Araguaia (evento dedicado, busca futura por
+"Operação Marajoara"/"Bico do Papagaio" no vol. III); módulo crimes e justiça
+(ADR-009, em aberto).

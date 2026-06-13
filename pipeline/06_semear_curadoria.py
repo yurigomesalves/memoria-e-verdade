@@ -28,6 +28,7 @@ TIPOS_BIOGRAFIA = {"vitima", "organizacao", "perpetrador", "local"}
 MARCADORES = {
     "classe_trabalhadora", "camponesado", "classe_media",
     "negro", "indigena", "pardo", "mulher", "lgbt", "estrangeiro_imigrante",
+    "estudante", "religioso_a", "militar_oposicao", "jornalista", "advogado_a",
 }
 TIPOS_CRIME = {
     "prisao_ilegal_arbitraria", "tortura", "execucao_sumaria",

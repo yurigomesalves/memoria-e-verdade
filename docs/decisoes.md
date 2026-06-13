@@ -123,3 +123,24 @@
   novo texto público em `docs/manifesto-projeto-bacuri.md` (rascunho do
   curador, publicado só após revisão do Yuri); nova página `/manifesto` e
   link no cabeçalho. Nenhuma migração ou mudança de pipeline.
+
+## ADR-010 — Ampliação do vocabulário de marcadores (seção 6.2): papel social
+- **Data**: 13/06/2026
+- **Contexto**: a biografia de Edson Luís de Lima Souto (Calabouço, 1968) usa o
+  marcador `estudante`. A seção 6.2 da taxonomia já documentava
+  `estudante`/`religioso_a`/`militar_oposicao`/`jornalista`/`advogado_a` como
+  marcadores de "papel social", mas o check constraint do banco (migração 0006)
+  e o script `06_semear_curadoria.py` nunca os incluíam — só os marcadores de
+  classe/raça/gênero/origem.
+- **Decisão (Yuri)**: ampliar o vocabulário do banco e do script para incluir os
+  5 termos de papel social já previstos na taxonomia (migração 0008).
+- **Impacto**: `biografia_marcadores` e `evento_marcadores` aceitam agora
+  `estudante`, `religioso_a`, `militar_oposicao`, `jornalista`, `advogado_a`.
+  Aproveitando a correção, 3 marcadores antigos fora de qualquer vocabulário
+  (que bloqueavam o seed) foram corrigidos: `igreja_catolica_progressista` →
+  `religioso_a` (Antônio Henrique Pereira Neto); `lideranca_camponesa` →
+  `camponesado` e remoção de `idoso` (Epaminondas Gomes de Oliveira);
+  `camponeses_luta_pela_terra` → `camponesado` (Sebastião Gomes dos Santos);
+  remoção de `ocultacao_de_cadaver_vala_clandestina` de José Gomes Teixeira
+  (é `tipo_crime` de evento, já presente em `tipos_crime`). Biografia de
+  Edson Luís publicada (`status_curadoria = "publicada"`) e semeada no Supabase.
