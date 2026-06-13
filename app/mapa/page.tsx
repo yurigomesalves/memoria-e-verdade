@@ -147,9 +147,9 @@ function MapaConteudo() {
 
   return (
     <div className="flex flex-1 flex-col">
-      <header className="border-b border-creme-200 px-4 py-4 sm:px-6 dark:border-verde-900">
+      <header className="border-b border-creme-200 px-4 py-6 sm:px-6 dark:border-verde-900">
         <div className="mx-auto w-full max-w-5xl">
-          <h1 className="text-xl font-semibold tracking-tight text-verde-950 sm:text-2xl dark:text-neutral-100">
+          <h1 className="font-serif text-2xl font-medium tracking-tight text-verde-950 sm:text-3xl dark:text-creme-50">
             Mapa
           </h1>
           <p className="mt-1 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">

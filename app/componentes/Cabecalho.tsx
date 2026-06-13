@@ -17,7 +17,7 @@ export default function Cabecalho() {
   return (
     <nav
       aria-label="Navegação principal"
-      className="border-b border-creme-200 px-4 py-3 sm:px-6 dark:border-verde-900"
+      className="border-b-4 border-verde-950 px-4 py-3 sm:px-6 dark:border-verde-700"
     >
       <div className="mx-auto flex w-full max-w-4xl flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
         <Link

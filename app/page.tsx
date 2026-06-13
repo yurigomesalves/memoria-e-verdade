@@ -3,9 +3,9 @@ import Chat from "./componentes/Chat";
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col">
-      <header className="border-b border-creme-200 px-4 py-8 text-center sm:px-6 sm:py-10 dark:border-verde-900">
+      <header className="border-b border-creme-200 px-4 py-12 text-center sm:px-6 sm:py-16 dark:border-verde-900">
         <div className="mx-auto w-full max-w-2xl">
-          <h1 className="font-serif text-3xl font-medium tracking-tight text-verde-950 sm:text-4xl dark:text-creme-50">
+          <h1 className="font-serif text-4xl font-medium tracking-tight text-verde-950 sm:text-5xl dark:text-creme-50">
             Memória e Verdade
           </h1>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
