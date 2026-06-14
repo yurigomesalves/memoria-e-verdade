@@ -1,19 +1,25 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const LINKS = [
   { href: "/", rotulo: "Início" },
   { href: "/biografias", rotulo: "Nomes e histórias" },
   { href: "/mapa", rotulo: "Mapa" },
   { href: "/transparencia", rotulo: "Transparência" },
-  { href: "/manifesto", rotulo: "manifesto projeto_bacuri" },
+  { href: "/manifesto", rotulo: "Manifesto Projeto Bacuri" },
 ];
 
 /**
  * Navegação compartilhada entre as páginas do projeto.
  * Nome do projeto à esquerda (como um logotipo) e links à direita,
- * com foco visível, sem ícones decorativos.
+ * com foco visível, sem ícones decorativos. O link da página atual
+ * fica destacado para orientar o visitante.
  */
 export default function Cabecalho() {
+  const pathname = usePathname();
+
   return (
     <nav
       aria-label="Navegação principal"
@@ -27,16 +33,27 @@ export default function Cabecalho() {
           Memória e Verdade
         </Link>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="inline-block rounded px-1 py-0.5 font-medium text-verde-800 underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-700 dark:text-neutral-300"
-              >
-                {link.rotulo}
-              </Link>
-            </li>
-          ))}
+          {LINKS.map((link) => {
+            const ativo =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname?.startsWith(link.href);
+            return (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  aria-current={ativo ? "page" : undefined}
+                  className={`inline-block rounded px-1 py-0.5 font-medium underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-700 ${
+                    ativo
+                      ? "underline text-verde-950 dark:text-creme-50"
+                      : "text-verde-800 dark:text-neutral-300"
+                  }`}
+                >
+                  {link.rotulo}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>
