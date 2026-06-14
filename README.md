@@ -1,4 +1,4 @@
-# Memória e Verdade
+# Projeto Bacuri
 
 Acervo digital e chatbot de pesquisa sobre a Ditadura Civil-Militar no Brasil
 (1964–1985). Toda resposta do assistente cita autor, documento, página/trecho

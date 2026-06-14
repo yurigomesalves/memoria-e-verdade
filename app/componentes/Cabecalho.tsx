@@ -30,7 +30,7 @@ export default function Cabecalho() {
           href="/"
           className="font-serif text-base font-semibold tracking-tight text-verde-950 dark:text-creme-50"
         >
-          Memória e Verdade
+          Projeto Bacuri
         </Link>
         <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
           {LINKS.map((link) => {

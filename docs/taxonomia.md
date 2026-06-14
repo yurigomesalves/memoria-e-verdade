@@ -1,4 +1,4 @@
-# Taxonomia e Vocabulário Controlado — Memória e Verdade
+# Taxonomia e Vocabulário Controlado — Projeto Bacuri
 
 > Documento de referência do Curador para classificação de fontes, chunks, biografias
 > e eventos do acervo. Toda classificação automática (IA, no pipeline) deve ser

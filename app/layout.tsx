@@ -19,7 +19,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Memória e Verdade",
+  title: "Projeto Bacuri",
   description:
     "Acervo digital e chatbot documental sobre a Ditadura Civil-Militar no Brasil (1964–1985), com fontes históricas citadas em todas as respostas.",
 };

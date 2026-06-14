@@ -1,6 +1,6 @@
 # Decisões editoriais e de curadoria (ADRs)
 
-> Registro público das decisões de curadoria do projeto Memória e Verdade,
+> Registro público das decisões de curadoria do Projeto Bacuri,
 > em cumprimento ao princípio 1 (transparência editorial). Cada entrada:
 > data, decisão, justificativa e impacto.
 

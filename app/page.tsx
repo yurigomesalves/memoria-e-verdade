@@ -6,7 +6,7 @@ export default function Home() {
       <header className="border-b border-creme-200 px-4 py-4 text-center sm:px-6 sm:py-16 dark:border-verde-900">
         <div className="mx-auto w-full max-w-2xl">
           <h1 className="font-serif text-2xl font-medium tracking-tight text-verde-950 sm:text-5xl dark:text-creme-50">
-            Memória e Verdade
+            Projeto Bacuri
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-neutral-600 sm:mt-3 sm:text-sm dark:text-neutral-400">
             Assistente educativo sobre a Ditadura Civil-Militar no Brasil
@@ -27,7 +27,7 @@ export default function Home() {
 
       <footer className="border-t border-creme-200 px-4 py-3 text-center text-xs text-neutral-500 sm:px-6 dark:border-verde-900 dark:text-neutral-500">
         <a
-          href="https://github.com/yurigomesalves/memoria-e-verdade"
+          href="https://github.com/yurigomesalves/projetobacuri"
           target="_blank"
           rel="noopener noreferrer"
           className="underline underline-offset-2 hover:text-neutral-700 dark:hover:text-neutral-300"

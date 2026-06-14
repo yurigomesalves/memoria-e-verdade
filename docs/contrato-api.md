@@ -1,4 +1,4 @@
-# Contrato de API — Memória e Verdade (v1.2 — biografias e mapa, Fase 6, 12/06/2026)
+# Contrato de API — Projeto Bacuri (v1.2 — biografias e mapa, Fase 6, 12/06/2026)
 
 > Fechado na Fase 2 (Análise/Contrato) a partir do rascunho v0.1, incorporando as
 > pendências dos ADRs 001, 003 e 005 (ver `docs/decisoes.md`) e alinhando os tipos ao

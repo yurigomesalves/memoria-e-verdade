@@ -64,7 +64,7 @@ export default function TransparenciaPage() {
           {/* Texto definitivo aprovado em docs/revisao-editorial-fase4.md */}
           <div className="mt-2 space-y-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
             <p>
-              Esta página mostra como o projeto Memória e Verdade lida com as
+              Esta página mostra como o Projeto Bacuri lida com as
               avaliações enviadas por quem usa o assistente. Quando alguém marca
               uma resposta como incompleta ou incorreta e propõe um texto
               alternativo ou novas fontes, essa contribuição{" "}

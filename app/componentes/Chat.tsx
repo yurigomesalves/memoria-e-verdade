@@ -209,7 +209,7 @@ export default function Chat() {
             ) : (
               <div className="w-full rounded-md border border-creme-200 bg-white px-3 py-3 text-sm dark:border-verde-900 dark:bg-verde-950">
                 <span className="mb-2 block text-xs font-medium text-neutral-500 dark:text-neutral-400">
-                  Memória e Verdade
+                  Projeto Bacuri
                 </span>
                 {mensagem.erro ? (
                   <p role="alert" className="text-red-700 dark:text-red-400">

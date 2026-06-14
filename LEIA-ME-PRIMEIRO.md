@@ -70,16 +70,16 @@ Para confirmar a forma de instalação mais atual e os requisitos, consulte a do
 
 Primeiro uso:
 ```bash
-mkdir -p ~/projetos/memoria-e-verdade
-cd ~/projetos/memoria-e-verdade
+mkdir -p ~/projetos/projetobacuri
+cd ~/projetos/projetobacuri
 claude
 ```
 Na primeira vez ele abre o navegador para você fazer login com sua conta Claude. Pronto: você conversa com ele em português, dentro do terminal, e ele cria e edita arquivos do projeto para você.
 
 ### 1.4 Copiar este kit para dentro do projeto
-Descompacte o arquivo `kit-memoria-e-verdade.zip` que acompanha este guia e copie TODO o conteúdo para `~/projetos/memoria-e-verdade/`. A estrutura deve ficar:
+Descompacte o arquivo `kit-projetobacuri.zip` que acompanha este guia e copie TODO o conteúdo para `~/projetos/projetobacuri/`. A estrutura deve ficar:
 ```
-memoria-e-verdade/
+projetobacuri/
 ├── CLAUDE.md                  ← a "constituição" do projeto (o Claude Code lê sempre)
 ├── LEIA-ME-PRIMEIRO.md        ← este guia
 ├── .claude/
@@ -102,7 +102,7 @@ Dica: pastas que começam com ponto (`.claude`) ficam ocultas. No gerenciador de
 
 Crie nesta ordem, todas com o mesmo e-mail:
 
-1. **GitHub** — https://github.com — onde seu código fica guardado e público (princípio 4: código aberto). Crie um repositório chamado `memoria-e-verdade`, marque como **Public** e escolha uma licença livre (sugestão: **AGPL-3.0**, que obriga quem usar seu código em serviços online a também abrir o código — coerente com seus princípios).
+1. **GitHub** — https://github.com — onde seu código fica guardado e público (princípio 4: código aberto). Crie um repositório chamado `projetobacuri`, marque como **Public** e escolha uma licença livre (sugestão: **AGPL-3.0**, que obriga quem usar seu código em serviços online a também abrir o código — coerente com seus princípios).
 2. **Supabase** — https://supabase.com — entre com a conta do GitHub. Crie um projeto (região São Paulo, `sa-east-1`). **Anote a senha do banco.** O plano Free dá 500 MB de banco — suficiente para dezenas de milhares de chunks de texto.
 3. **Vercel** — https://vercel.com — entre com a conta do GitHub. Não precisa configurar nada agora; quando o site existir, a Vercel publica automaticamente a cada atualização no GitHub.
 4. **Groq** — https://console.groq.com — camada gratuita generosa para modelos abertos (Llama). Gere uma **API key** e guarde.

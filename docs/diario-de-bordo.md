@@ -1,4 +1,4 @@
-# Diário de Bordo — Memória e Verdade
+# Diário de Bordo — Projeto Bacuri
 
 Registro cronológico do desenvolvimento, para transparência do processo e
 matéria-prima da dissertação.

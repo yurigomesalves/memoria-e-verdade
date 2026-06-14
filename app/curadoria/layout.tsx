@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Curadoria — Memória e Verdade",
+  title: "Curadoria — Projeto Bacuri",
   robots: { index: false, follow: false },
 };
 

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
-  title: "manifesto projeto_bacuri — Memória e Verdade",
+  title: "Manifesto — Projeto Bacuri",
   description:
     "Manifesto do projeto: por que existe, o nome e os princípios que o orientam.",
 };
